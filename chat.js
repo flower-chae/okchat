@@ -1,7 +1,7 @@
-var socket = io();
-var messages = document.getElementById("messages");
-var form = document.getElementById("form");
-var input = document.getElementById("input");
+const socket = io();
+const messages = document.getElementById("messages");
+const form = document.getElementById("form");
+const input = document.getElementById("input");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -12,7 +12,7 @@ form.addEventListener("submit", function (e) {
 });
 
 socket.on("chatmessage", function (msg) {
-  var item = document.createElement("li");
+  const item = document.createElement("li");
   item.textContent = msg;
   messages.appendChild(item);
   window.scrollTo(0, document.body.scrollHeight);
